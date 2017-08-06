@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import HellWorld from './hello-world/index.js';
+import Main from './main-component/index.js';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<HellWorld />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
 registerServiceWorker();
