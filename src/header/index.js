@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './styles.css';
 
-class HelloWorld extends Component {
+class Header extends Component {
   render() {
     return (
       <div className="App">
@@ -15,4 +15,4 @@ class HelloWorld extends Component {
   }
 }
 
-export default HelloWorld;
+export default Header;
