@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './styles.css';
 
 class HappyHacking extends Component {
