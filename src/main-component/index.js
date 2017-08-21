@@ -11,7 +11,7 @@ class HelloWorld extends Component {
     return (
       <div className="App">
         <Header />
-        <ComponentsAndProps />
+        <ComponentsAndProps name="Mohammed" />
       </div>
     );
   }
