@@ -12,6 +12,7 @@ class HelloWorld extends Component {
       <div className="App">
         <Header />
         <ComponentsAndProps name="Saad" />
+        <HappyHacking />
       </div>
     );
   }
