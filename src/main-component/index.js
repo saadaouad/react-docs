@@ -14,7 +14,7 @@ class HelloWorld extends React.Component {
       <div className="App">
         <Header />
         <UserInfo name={name} avatarUrl={avatarUrl} />
-        <Clock date={new Date()} />
+        <Clock />
         <HappyHacking />
       </div>
     );
