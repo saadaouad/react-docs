@@ -13,6 +13,10 @@ class Clock extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timerID);    
+  }
+
   render() {
     return (
       <div>
