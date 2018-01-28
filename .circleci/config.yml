@@ -8,3 +8,9 @@ jobs:
     steps:
       - checkout
       - run: echo "hello world"
+  test:
+    docker:
+      - image: node:8.9
+    steps:
+      - checkout
+      - run: cypress run --record
