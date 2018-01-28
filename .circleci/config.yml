@@ -1,10 +1,13 @@
 
 version: 2
 jobs:
-   build:
-     working_directory: /var/www
-     docker:
-       - image: node:8.9
-     steps:
-       - checkout
-       - run: echo "hello world"
+  build:
+    working_directory: /var/www
+    docker:
+      - image: node:8.9
+    steps:
+      - checkout
+      - run: echo "hello world"
+  test:
+    override:
+      - cypress run --record
