@@ -5,7 +5,6 @@ jobs:
     working_directory: /var/www
     docker:
       - image: node:8.9
-    test:
-      override:
-        - cypress run --record
-  
+    steps:
+      - checkout
+      - run: echo "hello world"
