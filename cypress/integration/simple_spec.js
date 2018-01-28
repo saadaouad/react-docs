@@ -1,5 +1,5 @@
 describe('My First Test', function() {
-    it('Does not do much!', function() {
-      expect(true).to.equal(true)
+    it('Visit the kitchen sink', function() {
+      cy.visit('https://example.cypress.io/')
     })
   })
