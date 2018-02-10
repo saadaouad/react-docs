@@ -1,16 +1,14 @@
-
 version: 2
 jobs:
   build:
+    docker:
+      - image: cypress/base:6
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
     working_directory: /var/www
-    docker:
-      - image: node:8.9
     steps:
       - checkout
-      - run: echo "hello world"
-  test:
-    docker:
-      - image: node:8.9
-    steps:
-      - checkout
-      - run: cypress run --record
+      - run: npm install
+      - run: $(npm bin)/cypress run --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
+      
