@@ -1,17 +1,24 @@
 import React from 'react';
 
 class HandlingEvents extends React.Component {
-  handleClick = e => {
-    e.preventDefault();
-    console.log('The link was clicked.');
-  };
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn,
+    }));
+  }
 
   render() {
-    const handleClick = this.handleClick;
     return (
-      <a href="#" onClick={handleClick}>
-        Click me
-      </a>
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
     );
   }
 }
