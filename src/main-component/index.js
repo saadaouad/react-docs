@@ -7,6 +7,7 @@ import UserInfo from '../components-and-props/UserInfo';
 //import HandlingEvents from '../handling-events/index.js';
 //import LoginControl from '../conditional-rendering/index.js';
 //import Page from '../conditional-rendering/Page.js';
+import ListItems from '../lists-and-keys/index.js';
 import avatarUrl from '../avatar.jpeg';
 import './styles.css';
 
@@ -19,6 +20,7 @@ class HelloWorld extends React.Component {
         <UserInfo name={name} avatarUrl={avatarUrl} />
         <Clock />
         <HappyHacking />
+        <ListItems />
       </div>
     );
   }
