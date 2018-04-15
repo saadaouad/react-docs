@@ -3,7 +3,7 @@ import React from 'react';
 const numbers = [1, 2, 3, 4, 5];
 
 const listItems = numbers.map(number => (
-    <li className="pv1">{number}</li>
+    <li key={number.toString()} className="pv1">{number}</li>
 ));
 
 const ListItems = () => {
