@@ -11,7 +11,7 @@ import UserInfo from '../components-and-props/UserInfo';
 import avatarUrl from '../avatar.jpeg';
 import './styles.css';
 
-class HelloWorld extends React.Component {
+class MainComponent extends React.Component {
   render() {
     const name = 'Saad';
     return (
@@ -25,4 +25,4 @@ class HelloWorld extends React.Component {
   }
 }
 
-export default HelloWorld;
+export default MainComponent;
