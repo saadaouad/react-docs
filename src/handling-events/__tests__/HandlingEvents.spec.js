@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import HandlingEvents from '../index.js';
+import React from "react";
+import { shallow } from "enzyme";
+import HandlingEvents from "../index.js";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<HandlingEvents />, div);
+it("HandlingEvents component renders without crashing", () => {
+  const wrapper = shallow(<HandlingEvents />);
+  expect(wrapper.state().isToggleOn).toBe(true);
+  wrapper.find('button').simulate('click');
+  expect(wrapper.state().isToggleOn).toBe(false);
 });
