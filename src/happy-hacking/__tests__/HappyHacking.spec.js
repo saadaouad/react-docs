@@ -1,11 +1,8 @@
-import React from "react";
-import { shallow } from "enzyme";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import HappyHacking from '../index.js';
 
-it("HappyHacking component renders without crashing", () => {
-  const wrapper = shallow(<HappyHacking />);
-  const code = (
-    <code>Happy hacking!</code>
-  );
-  expect(wrapper.contains(code)).toEqual(true);
+it('HappyHacking renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<HappyHacking />, div);
 });
