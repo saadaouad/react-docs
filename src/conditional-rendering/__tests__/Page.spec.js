@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Page from '../Page.js';
+import React from "react";
+import { shallow } from "enzyme";
+import Page from "../Page.js";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Page />, div);
+it("Page component renders without crashing", () => {
+  const wrapper = shallow(<Page />);
+  expect(wrapper.state().showWarning).toBe(true);
+  wrapper.find('button').simulate('click');
+  expect(wrapper.state().showWarning).toBe(false);
 });

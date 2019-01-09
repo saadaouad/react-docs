@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 function WarningBanner(props) {
   if (!props.warn) {
@@ -11,13 +11,13 @@ function WarningBanner(props) {
 class Page extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {showWarning: true};
+    this.state = { showWarning: true };
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
   handleToggleClick() {
     this.setState(prevState => ({
-      showWarning: !prevState.showWarning,
+      showWarning: !prevState.showWarning
     }));
   }
 
@@ -26,7 +26,7 @@ class Page extends React.Component {
       <div>
         <WarningBanner warn={this.state.showWarning} />
         <button onClick={this.handleToggleClick}>
-          {this.state.showWarning ? 'Hide' : 'Show'}
+          {this.state.showWarning ? "Hide" : "Show"}
         </button>
       </div>
     );
