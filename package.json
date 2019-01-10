@@ -24,7 +24,10 @@
     "analyze": "source-map-explorer build/static/js/main.*"
   },
   "devDependencies": {
-    "cypress": "^1.4.2"
+    "cypress": "^1.4.2",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "react-test-renderer": "^16.6.3"
   },
   "browserslist": [
     ">0.2%",
