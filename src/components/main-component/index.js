@@ -1,13 +1,7 @@
 import React from "react";
 import Header from "../header/index.js";
 import HappyHacking from "../happy-hacking/index.js";
-//import IntroducingJSX from '../introducing-jsx/index.js';
-//import Clock from '../state-and-lifecycle/index.js';
 import UserInfo from "../components-and-props/UserInfo";
-//import HandlingEvents from '../handling-events/index.js';
-//import LoginControl from '../conditional-rendering/index.js';
-// import Page from '../conditional-rendering/Page.js';
-// import ListItems from '../lists-and-keys/index.js';
 import avatarUrl from "../../avatar.jpeg";
 import "./styles.css";
 
@@ -17,9 +11,14 @@ class MainComponent extends React.Component {
     return (
       <div className="App">
         <Header />
-        <UserInfo name={name} avatarUrl={avatarUrl} />
-        {this.props.children}
-        <HappyHacking />
+        <div className="flex">
+        <div className="ph6-ns bg-light-gray vh-100-ns pv4">Menu</div>
+        <div className="center">
+            <UserInfo name={name} avatarUrl={avatarUrl} />
+          <div>{this.props.children}</div>
+            <HappyHacking />
+          </div>
+        </div>
       </div>
     );
   }
