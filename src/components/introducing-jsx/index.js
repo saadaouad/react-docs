@@ -12,7 +12,7 @@ const user = {
 class IntroducingJSX extends Component {
   render() {
     return (
-      <div>
+      <div className="tc">
         <p>
           Hello, {formatName(user)}!
         </p>

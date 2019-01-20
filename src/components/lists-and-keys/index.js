@@ -7,7 +7,7 @@ const ListItems = () => {
       {number}
     </li>
   ));
-  return <div className="w-10 center">{listItems}</div>;
+  return <div className="tc pv3">{listItems}</div>;
 };
 
 export default ListItems;

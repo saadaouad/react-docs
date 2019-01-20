@@ -49,7 +49,7 @@ class LoginControl extends Component {
     );
 
     return (
-      <div>
+      <div className="tc">
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
       </div>

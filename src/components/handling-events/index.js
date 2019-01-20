@@ -16,7 +16,7 @@ class HandlingEvents extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="tc">
         <h3>Salam alaykum</h3>
         <button onClick={this.handleClick}>
           {this.state.isToggleOn ? "ON" : "OFF"}
