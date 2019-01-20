@@ -10,6 +10,7 @@ class Menu extends React.Component {
       <div className="w-20-ns tc bg-light-gray vh-100-ns pv4">
         <div className="pv2">
           <Link
+            id="introducing-jsx"
             className="dim black no-underline"
             to="/introducing-jsx"
             getProps={isActive}
@@ -19,6 +20,7 @@ class Menu extends React.Component {
         </div>
         <div className="pv2">
           <Link
+            id="components-and-props"
             className="dim black no-underline"
             to="/components-and-props"
             getProps={isActive}
@@ -28,6 +30,7 @@ class Menu extends React.Component {
         </div>
         <div className="pv2">
           <Link
+            id="state-and-lifecycle"
             className="dim black no-underline"
             to="/state-and-lifecycle"
             getProps={isActive}
@@ -37,6 +40,7 @@ class Menu extends React.Component {
         </div>
         <div className="pv2">
           <Link
+            id="handling-events"
             className="dim black no-underline"
             to="/handling-events"
             getProps={isActive}
@@ -46,6 +50,7 @@ class Menu extends React.Component {
         </div>
         <div className="pv2">
           <Link
+            id="conditional-rendering"
             className="dim black no-underline"
             to="/conditional-rendering"
             getProps={isActive}
@@ -55,6 +60,7 @@ class Menu extends React.Component {
         </div>
         <div className="pv2">
           <Link
+            id="lists-and-keys"
             className="dim black no-underline"
             to="/lists-and-keys"
             getProps={isActive}
