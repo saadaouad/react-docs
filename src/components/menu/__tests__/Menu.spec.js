@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "@reach/router";
 import { shallow } from "enzyme";
 import Menu from "../index.js";
 
