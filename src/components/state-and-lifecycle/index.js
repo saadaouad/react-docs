@@ -1,24 +1,25 @@
-import React from 'react';
+import React from "react";
 
 function FormattedDate(props) {
-  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+  return (
+    <h4 className="fw5">
+      It is <span className="fw6">{props.date.toLocaleTimeString()}</span>.
+    </h4>
+  );
 }
 
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = { date: new Date() };
   }
 
-  componentDidMount(){
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID);    
+    clearInterval(this.timerID);
   }
 
   tick() {
@@ -30,9 +31,12 @@ class Clock extends React.Component {
   render() {
     return (
       <div className="tc">
-        <FormattedDate date={this.state.date} />
+        <h2>State and Lifecycle</h2>
+        <div className="pv3">
+          <FormattedDate date={this.state.date} />
+        </div>
       </div>
-    )
+    );
   }
 }
 
