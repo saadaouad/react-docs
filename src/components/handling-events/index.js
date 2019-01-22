@@ -16,11 +16,13 @@ class HandlingEvents extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Salam alaykum</h3>
-        <button onClick={this.handleClick}>
-          {this.state.isToggleOn ? "ON" : "OFF"}
-        </button>
+      <div className="tc">
+        <h2>Handling events</h2>
+        <div className="pv3">
+          <button onClick={this.handleClick}>
+            {this.state.isToggleOn ? "Click here" : "Thanks!"}
+          </button>
+        </div>
       </div>
     );
   }

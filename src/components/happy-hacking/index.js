@@ -4,7 +4,7 @@ import './styles.css';
 class HappyHacking extends Component {
   render() {
     return (
-      <div>
+      <div className="tc">
         <p className="App-intro">
           <code>Happy hacking!</code>
         </p>
