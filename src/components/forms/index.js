@@ -16,6 +16,9 @@ const Forms = () => (
           ) {
             errors.email = "Invalid email address";
           }
+          if (!values.password) {
+            errors.password = "Required";
+          }
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
@@ -33,7 +36,6 @@ const Forms = () => (
           handleBlur,
           handleSubmit,
           isSubmitting
-          /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit}>
             <div className="pa2">
@@ -44,7 +46,9 @@ const Forms = () => (
                 onBlur={handleBlur}
                 value={values.email}
               />
-              {errors.email && touched.email && errors.email}
+              <span className="red">
+                {errors.email && touched.email && errors.email}
+              </span>
             </div>
             <div className="pa2">
               <input
@@ -54,7 +58,9 @@ const Forms = () => (
                 onBlur={handleBlur}
                 value={values.password}
               />
-              {errors.password && touched.password && errors.password}
+              <span className="red">
+                {errors.password && touched.password && errors.password}
+              </span>
             </div>
             <div className="ph2 pv3">
               <button type="submit" disabled={isSubmitting}>
