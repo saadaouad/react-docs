@@ -8,6 +8,7 @@ import IntroducingToJsx from "../components/introducing-jsx";
 import ListsAndKeys from "../components/lists-and-keys";
 import StateAndLifeCycle from "../components/state-and-lifecycle";
 import ComponentsAndProps from "../components/components-and-props/UserInfo";
+import Forms from "../components/forms";
 import avatarUrl from "../avatar.jpeg";
 
 let name = "Saad";
@@ -28,6 +29,7 @@ const App = () => {
           />
           <ListsAndKeys path="/lists-and-keys" />
           <StateAndLifeCycle path="/state-and-lifecycle" />
+          <Forms path="/forms" />
         </Home>
       </Router>
     </div>

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "formik": "^1.4.2",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.6.2",
