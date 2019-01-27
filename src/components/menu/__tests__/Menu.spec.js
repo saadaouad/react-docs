@@ -10,4 +10,5 @@ it("Menu component renders without crashing", () => {
   expect(wrapper.find("#handling-events").props().to).toBe('/handling-events');
   expect(wrapper.find("#conditional-rendering").props().to).toBe('/conditional-rendering');
   expect(wrapper.find("#lists-and-keys").props().to).toBe('/lists-and-keys');
+  expect(wrapper.find("#forms").props().to).toBe('/forms');
 });
