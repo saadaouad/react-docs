@@ -68,6 +68,16 @@ class Menu extends React.Component {
             Lists and Keys
           </Link>
         </div>
+        <div className="pv2">
+          <Link
+            id="forms"
+            className="dim black no-underline"
+            to="/forms"
+            getProps={isActive}
+          >
+            Forms
+          </Link>
+        </div>
       </div>
     );
   }

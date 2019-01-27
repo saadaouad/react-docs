@@ -56,7 +56,7 @@ const Forms = () => (
               />
               {errors.password && touched.password && errors.password}
             </div>
-            <div className="pa2">
+            <div className="ph2 pv3">
               <button type="submit" disabled={isSubmitting}>
                 Submit
               </button>

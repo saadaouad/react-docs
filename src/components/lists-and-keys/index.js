@@ -10,7 +10,7 @@ const ListItems = () => {
   return (
     <div className="tc">
       <h2>Lists and keys</h2>
-      <div className="pv3">{listItems}</div>
+      <div className="tl pa3">{listItems}</div>
     </div>
   );
 };
