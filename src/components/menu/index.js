@@ -78,6 +78,16 @@ class Menu extends React.Component {
             Forms
           </Link>
         </div>
+        <div className="pv2">
+          <Link
+            id="lifting-state-up"
+            className="dim black no-underline"
+            to="/lifting-state-up"
+            getProps={isActive}
+          >
+            Lifting State Up
+          </Link>
+        </div>
       </div>
     );
   }
