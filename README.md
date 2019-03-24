@@ -9,4 +9,3 @@
 
 ### Runs app
 `yarn start` or `npm start`
-
