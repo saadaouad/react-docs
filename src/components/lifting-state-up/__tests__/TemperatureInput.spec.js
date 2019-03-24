@@ -1,8 +1,8 @@
 import React from "react";
-import { shallow } from "enzyme";
-import TemperatureInput from "../TemperatureInput";
+import ReactDOM from "react-dom";
+import TemperatureInput from "../";
 
-it("Temperature input renders without crashing", () => {
-  const wrapper = shallow(<TemperatureInput />);
-  expect(wrapper.exists()).toBe(true);
+it("TemperatureInput renders without crashing", () => {
+  const div = document.createElement("div");
+  ReactDOM.render(<TemperatureInput />, div);
 });
