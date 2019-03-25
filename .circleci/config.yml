@@ -36,15 +36,7 @@ jobs:
           paths:
             - node_modules
           key: depens-{{ checksum "package.json" }}
-  test:
-    <<: *defaults
-    steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
-      - run: yarn test
-
+  
   build:
     <<: *defaults
     steps:
@@ -60,6 +52,15 @@ jobs:
           paths:
             - build
             - package.json
+  
+  test:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: depens-{{ checksum "package.json" }}
+      - run: yarn test
 
 workflows:
   version: 2
@@ -69,9 +70,9 @@ workflows:
       - install_dependencies:
           requires:
             - checkout_code
-      - test:
+      - build:
           requires:
             - install_dependencies
-      - build:
+      - test:
           requires:
             - install_dependencies
