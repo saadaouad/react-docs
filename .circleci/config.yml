@@ -60,7 +60,7 @@ jobs:
 
 workflows:
   version: 2
-  test_and_build:
+  build_and_test:
     jobs:
       - checkout_code
       - install_dependencies:
