@@ -14,7 +14,9 @@ jobs:
             - source-{{ .Branch }}-{{ .Revision }}
             - source-{{ .Branch }}-
             - source-
+
       - checkout
+
       - save_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
           paths:
@@ -27,13 +29,13 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run: yarn
+            - depens-{{ checksum "package.json" }}
+            - depens-
+      - run: yarn install
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
   
   build:
     <<: *defaults
@@ -41,8 +43,10 @@ jobs:
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn build
+          key: depens-{{ checksum "package.json" }}
+
+      - run: npm run build
+
       - persist_to_workspace:
           root: ~/repo
           paths:
@@ -55,7 +59,7 @@ jobs:
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
       - run: yarn test
 
 workflows:
