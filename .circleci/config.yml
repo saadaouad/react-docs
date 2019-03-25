@@ -14,9 +14,7 @@ jobs:
             - source-{{ .Branch }}-{{ .Revision }}
             - source-{{ .Branch }}-
             - source-
-
       - checkout
-
       - save_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
           paths:
@@ -44,9 +42,7 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
-
       - run: npm run build
-
       - persist_to_workspace:
           root: ~/repo
           paths:
