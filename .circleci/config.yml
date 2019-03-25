@@ -9,21 +9,27 @@ jobs:
   checkout_code:
     <<: *defaults
     steps:
-      - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - source-{{ .Branch }}-{{ .Revision }}
+            - source-{{ .Branch }}-
+            - source-
+      - checkout
+      - save_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - "~/repo"
 
   install_dependencies:
     <<: *defaults
     steps:
       - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
-      - run: yarn install
+      - run: yarn
       - save_cache:
           paths:
             - node_modules
@@ -36,7 +42,7 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm run build
+      - run: yarn build
       - persist_to_workspace:
           root: ~/repo
           paths:
@@ -49,7 +55,7 @@ jobs:
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: depens-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn test
 
 workflows:
