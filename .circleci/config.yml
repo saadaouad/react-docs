@@ -27,11 +27,13 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: depens-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
   
   build:
     <<: *defaults
     steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm run build
