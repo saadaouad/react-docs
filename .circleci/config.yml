@@ -29,7 +29,7 @@ jobs:
           keys:
             - depens-{{ checksum "package.json" }}
             - depens-
-      - run: yarn install
+      - run: yarn
       - save_cache:
           paths:
             - node_modules
