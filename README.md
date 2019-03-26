@@ -1,4 +1,4 @@
-# react-docs [![Inline docs](http://inch-ci.org/github/saadaouad/react-docs.svg?branch=master)](http://inch-ci.org/github/saadaouad/react-docs)
+# react-docs
 
 
 ## Getting Started
