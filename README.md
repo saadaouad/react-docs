@@ -1,4 +1,5 @@
-# react-docs
+# react-docs [![Inline docs](http://inch-ci.org/github/saadaouad/react-docs.svg?branch=master)](http://inch-ci.org/github/saadaouad/react-docs)
+
 
 ## Getting Started
 ### Installation using CLI `create-react-app` with no build configuration
