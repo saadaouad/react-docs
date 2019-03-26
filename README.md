@@ -1,5 +1,4 @@
-# react-docs [![CircleCI](https://circleci.com/gh/saadaouad/react-docs/tree/master.svg?style=svg)](https://circleci.com/gh/saadaouad/react-docs/tree/master)
-
+# react-docs
 
 ## Getting Started
 ### Installation using CLI `create-react-app` with no build configuration
