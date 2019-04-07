@@ -10,7 +10,7 @@ import StateAndLifeCycle from "../components/state-and-lifecycle";
 import ComponentsAndProps from "../components/components-and-props/UserInfo";
 import Forms from "../components/forms";
 import Calculator from '../components/lifting-state-up';
-import Composition from '../components/composition-vs-inheritance';
+import CompositionVsInheritance from '../components/composition-vs-inheritance';
 import avatarUrl from "../avatar.jpeg";
 
 let name = "Saad";
@@ -33,7 +33,7 @@ const App = () => {
           <StateAndLifeCycle path="/state-and-lifecycle" />
           <Forms path="/forms" />
           <Calculator path="/lifting-state-up" />
-          <Composition path="/composition-vs-inheritance" />
+          <CompositionVsInheritance path="/composition-vs-inheritance" />
         </Home>
       </Router>
     </div>
