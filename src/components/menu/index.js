@@ -88,6 +88,16 @@ class Menu extends React.Component {
             Lifting State Up
           </Link>
         </div>
+        <div className="pv2">
+          <Link
+            id="composition-vs-inheritance"
+            className="dim black no-underline"
+            to="/composition-vs-inheritance"
+            getProps={isActive}
+          >
+            Composition vs Inheritance
+          </Link>
+        </div>
       </div>
     );
   }
