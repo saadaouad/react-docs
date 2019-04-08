@@ -7,7 +7,7 @@ function FancyBorder(props) {
 function Dialog(props) {
   return (
     <FancyBorder color="black-80">
-      <h1 className="Dialog-title">{props.title}</h1>
+      <h3 className="Dialog-title">{props.title}</h3>
       <p className="Dialog-message">{props.message}</p>
       {props.children}
     </FancyBorder>
@@ -50,6 +50,7 @@ class CompositionVsInheritance extends Component {
   render() {
     return (
       <div className="tc">
+        <h2>Composition vs Inheritance</h2>
         <Dialog
           title="Mars Exploration Program"
           message="How should we refer to you?"
