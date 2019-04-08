@@ -98,6 +98,16 @@ class Menu extends React.Component {
             Composition vs Inheritance
           </Link>
         </div>
+        <div className="pv2">
+          <Link
+            id="thinking-in-react"
+            className="dim black no-underline"
+            to="/thinking-in-react"
+            getProps={isActive}
+          >
+            Thinking in React
+          </Link>
+        </div>
       </div>
     );
   }
