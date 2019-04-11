@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/components/lists-and-keys/index.js</title>
+    <title>Code coverage report for src/components/thinking-in-react/index.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/lists-and-keys</a> index.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/thinking-in-react</a> index.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>1/1</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>1/1</span>
       </div>
     </div>
   </div>
@@ -60,13 +60,9 @@
 15
 16
 17
-18
-19</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+18</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -79,24 +75,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from "react";
+import Products from "./Products";
+import products from "../../data/products.json";
 &nbsp;
-const ListItems = () =&gt; {
-  const numbers = [1, 2, 3, 4, 5];
-  const listItems = numbers.map((number, index) =&gt; (
-    &lt;li key={index} className="list-items pv1"&gt;
-      {number}
-    &lt;/li&gt;
-  ));
-  return (
-    &lt;div className="tc"&gt;
-      &lt;h2&gt;Lists and keys&lt;/h2&gt;
-      &lt;div className="tl pa3"&gt;{listItems}&lt;/div&gt;
-    &lt;/div&gt;
-  );
-};
+class ThinkingInReact extends Component {
+  render() {
+    return (
+      &lt;div className="tc"&gt;
+        {" "}
+        &lt;h2&gt;Thinking in React&lt;/h2&gt;
+        &lt;Products products={products} /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
 &nbsp;
-export default ListItems;
+export default ThinkingInReact;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

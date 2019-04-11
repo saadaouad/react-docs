@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/components/lifting-state-up/TemperatureInput.js</title>
+    <title>Code coverage report for src/components/thinking-in-react/Products.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/lifting-state-up</a> TemperatureInput.js
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/thinking-in-react</a> Products.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/7</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85.71% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/7</span>
+        <span class='fraction'>8/8</span>
       </div>
     </div>
   </div>
@@ -79,9 +79,29 @@
 34
 35
 36
-37</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -89,17 +109,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,8 +139,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -118,39 +146,53 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
 import PropTypes from "prop-types";
 &nbsp;
-const scaleNames = {
-  c: "Celsius",
-  f: "Fahrenheit"
+const Products = ({ products }) =&gt; {
+  const sportProducts =
+    products &amp;&amp;
+    products.filter(product =&gt; product.category === "Sporting Goods");
+  const electronicProducts =
+    products &amp;&amp; products.filter(product =&gt; product.category === "Electronics");
+  return (
+    &lt;table className="center tl"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th className="fw6 pv2 ph1"&gt;Name&lt;/th&gt;
+          &lt;th className="fw6 pv2 ph1"&gt;Price&lt;/th&gt;
+          &lt;th className="fw6 pv2 ph1"&gt;Stocked&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;th className="black fw5 pv1"&gt;{sportProducts[0].category}&lt;/th&gt;
+        &lt;/tr&gt;
+        {sportProducts.map((product, index) =&gt; (
+          &lt;tr key={index} className="sport-products"&gt;
+            &lt;td className="black-70 ph1"&gt;{product.name}&lt;/td&gt;
+            &lt;td className="black-70 ph1"&gt;{product.price}&lt;/td&gt;
+            &lt;td className="black-70 ph1"&gt;{product.stocked.toString()}&lt;/td&gt;
+          &lt;/tr&gt;
+        ))}
+        &lt;tr&gt;
+          &lt;th className="black fw5 pv1"&gt;{electronicProducts[0].category}&lt;/th&gt;
+        &lt;/tr&gt;
+        {electronicProducts.map((product, index) =&gt; (
+          &lt;tr key={index} className="electronic-products"&gt;
+            &lt;td className="black-70 ph1"&gt;{product.name}&lt;/td&gt;
+            &lt;td className="black-70 ph1"&gt;{product.price}&lt;/td&gt;
+            &lt;td className="black-70 ph1"&gt;{product.stocked.toString()}&lt;/td&gt;
+          &lt;/tr&gt;
+        ))}
+      &lt;/tbody&gt;
+      &lt;tbody /&gt;
+    &lt;/table&gt;
+  );
 };
 &nbsp;
-class TemperatureInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
-&nbsp;
-<span class="fstat-no" title="function not covered" >  ha</span>ndleChange(e) {
-<span class="cstat-no" title="statement not covered" >    this.props.onTemperatureChange(e.target.value);</span>
-  }
-&nbsp;
-  render() {
-    const { temperature, scale } = this.props;
-    return (
-      &lt;fieldset&gt;
-        &lt;legend&gt;Enter temperature in {scaleNames[scale]}:&lt;/legend&gt;
-        &lt;input value={temperature} onChange={this.handleChange} /&gt;
-      &lt;/fieldset&gt;
-    );
-  }
-}
-&nbsp;
-TemperatureInput.propTypes = {
-  temperature: PropTypes.string,
-  scale: PropTypes.string,
-  onTemperatureChange: PropTypes.func
+Products.propTypes = {
+  products: PropTypes.array.isRequired
 };
 &nbsp;
-export default TemperatureInput;
+export default Products;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
