@@ -21,7 +21,7 @@ const Products = ({ products }) => {
           <th className="black fw5 pv1">{sportProducts[0].category}</th>
         </tr>
         {sportProducts.map((product, index) => (
-          <tr key={index}>
+          <tr key={index} className="sport-products">
             <td className="black-70 ph1">{product.name}</td>
             <td className="black-70 ph1">{product.price}</td>
             <td className="black-70 ph1">{product.stocked.toString()}</td>
@@ -31,7 +31,7 @@ const Products = ({ products }) => {
           <th className="black fw5 pv1">{electronicProducts[0].category}</th>
         </tr>
         {electronicProducts.map((product, index) => (
-          <tr key={index}>
+          <tr key={index} className="electronic-products">
             <td className="black-70 ph1">{product.name}</td>
             <td className="black-70 ph1">{product.price}</td>
             <td className="black-70 ph1">{product.stocked.toString()}</td>
