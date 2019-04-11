@@ -23,4 +23,7 @@ it("Menu component renders without crashing", () => {
   expect(wrapper.find("#composition-vs-inheritance").props().to).toBe(
     "/composition-vs-inheritance"
   );
+  expect(wrapper.find("#thinking-in-react").props().to).toBe(
+    "/thinking-in-react"
+  );
 });
