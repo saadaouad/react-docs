@@ -57,6 +57,8 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn test:coverage
+      - store_artifacts:
+          path: coverage
 
 workflows:
   version: 2
