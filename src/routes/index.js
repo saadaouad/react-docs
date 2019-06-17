@@ -12,6 +12,7 @@ import Forms from "../components/forms";
 import Calculator from "../components/lifting-state-up";
 import CompositionVsInheritance from "../components/composition-vs-inheritance";
 import ThinkingInReact from "../components/thinking-in-react";
+import CodeSplitting from '../components/code-splitting';
 import avatarUrl from "../avatar.jpeg";
 
 let name = "Saad";
@@ -36,6 +37,7 @@ const App = () => {
           <Calculator path="/lifting-state-up" />
           <CompositionVsInheritance path="/composition-vs-inheritance" />
           <ThinkingInReact path="/thinking-in-react" />
+          <CodeSplitting path="/code-splitting" />
         </Home>
       </Router>
     </div>
