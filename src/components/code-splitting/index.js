@@ -19,7 +19,9 @@ class CodeSplitting extends Component {
       <div className="tc">
         <h2>Code Splitting</h2>
         <div>
-          <button onClick={this.handleClick}>Load</button>
+          <button type="button" onClick={this.handleClick}>
+            Load
+          </button>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
           <LazyComponent />
