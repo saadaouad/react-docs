@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "cryptiles": "^4.1.3",
     "formik": "^1.4.2",
     "jest-coverage-badges": "^1.1.2",
+    "lodash": "^4.17.15",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.6.2",
@@ -15,7 +17,8 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "^2.0.2",
     "sinon": "^7.2.3",
-    "source-map-explorer": "^1.5.0"
+    "source-map-explorer": "^1.5.0",
+    "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
