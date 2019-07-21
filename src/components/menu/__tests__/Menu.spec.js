@@ -26,4 +26,7 @@ it("Menu component renders without crashing", () => {
   expect(wrapper.find("#thinking-in-react").props().to).toBe(
     "/thinking-in-react"
   );
+  expect(wrapper.find("#code-splitting").props().to).toBe(
+    "/code-splitting"
+  );
 });
