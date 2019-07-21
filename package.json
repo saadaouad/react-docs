@@ -5,19 +5,19 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "cryptiles": "^4.1.3",
-    "formik": "^1.4.2",
+    "formik": "^1.5.8",
     "jest-coverage-badges": "^1.1.2",
     "lodash": "^4.17.15",
-    "node-sass-chokidar": "^0.0.3",
+    "node-sass-chokidar": "^1.3.5",
     "npm-run-all": "^4.0.2",
-    "prop-types": "^15.6.2",
-    "react": "^16.3.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
-    "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
-    "sinon": "^7.2.3",
-    "source-map-explorer": "^1.5.0"
+    "sinon": "^7.3.2",
+    "source-map-explorer": "^2.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -33,9 +33,9 @@
     "analyze": "source-map-explorer build/static/js/main.*"
   },
   "devDependencies": {
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.7.0",
-    "react-test-renderer": "^16.6.3"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "react-test-renderer": "^16.8.6"
   },
   "browserslist": [
     ">0.2%",
