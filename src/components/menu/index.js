@@ -108,6 +108,16 @@ class Menu extends React.Component {
             Thinking in React
           </Link>
         </div>
+        <div className="pv2">
+          <Link
+            id="code-splitting"
+            className="dim black no-underline"
+            to="/code-splitting"
+            getProps={isActive}
+          >
+            Code Splitting
+          </Link>
+        </div>
       </div>
     );
   }
