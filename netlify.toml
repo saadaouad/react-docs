@@ -1,5 +1,4 @@
 [build]
 base="/"
 publish="build/"
-command="yarn build"
-command="yarn test"
+command="yarn build && yarn test"
