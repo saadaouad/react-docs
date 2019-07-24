@@ -9,10 +9,6 @@ jobs:
   build:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
       - run: yarn build
       - persist_to_workspace:
           root: ~/repo
@@ -23,10 +19,6 @@ jobs:
   test:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
       - run: yarn test:badges
       - store_artifacts:
           path: coverage
