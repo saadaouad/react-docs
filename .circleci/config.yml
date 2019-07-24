@@ -6,35 +6,6 @@ defaults: &defaults
 
 version: 2
 jobs:
-  checkout_code:
-    <<: *defaults
-    steps:
-      - restore_cache:
-          keys:
-            - source-{{ .Branch }}-{{ .Revision }}
-            - source-{{ .Branch }}-
-            - source-
-      - checkout
-      - save_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/repo"
-
-  install_dependencies:
-    <<: *defaults
-    steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
-      - restore_cache:
-          keys:
-            - depens-{{ checksum "package.json" }}
-            - depens-
-      - run: yarn
-      - save_cache:
-          paths:
-            - node_modules
-          key: depens-{{ checksum "package.json" }}
-  
   build:
     <<: *defaults
     steps:
@@ -64,13 +35,5 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - checkout_code
-      - install_dependencies:
-          requires:
-            - checkout_code
-      - build:
-          requires:
-            - install_dependencies
-      - test:
-          requires:
-            - install_dependencies
+      - build
+      - test
