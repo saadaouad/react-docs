@@ -56,9 +56,9 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
-      - run: yarn test:badges
-      - store_artifacts:
-          path: coverage
+      - run: yarn test:coverage
+      # - store_artifacts:
+      #     path: coverage
 
 workflows:
   version: 2
