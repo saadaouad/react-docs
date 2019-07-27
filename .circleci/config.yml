@@ -1,7 +1,10 @@
 # Javascript Node CircleCI 2.0 configuration file
 defaults: &defaults
   docker:
-    - image: circleci/node:10
+    - image: cypress/base:8
+     environment:
+          ## this enables colors in the output
+          TERM: xterm
   working_directory: ~/repo
 
 version: 2
@@ -72,8 +75,5 @@ workflows:
           requires:
             - install_dependencies
       - unit-test:
-          requires:
-            - install_dependencies
-      - e2e-test:
           requires:
             - install_dependencies
