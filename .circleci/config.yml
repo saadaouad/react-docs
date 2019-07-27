@@ -82,3 +82,4 @@ workflows:
       - unit_tests:
           requires:
             - install_dependencies
+      - cypress/run
