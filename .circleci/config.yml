@@ -49,7 +49,7 @@ jobs:
             - build
             - package.json
   
-  test:
+  unit-test:
     <<: *defaults
     steps:
       - restore_cache:
@@ -59,6 +59,15 @@ jobs:
       - run: yarn test:coverage
       # - store_artifacts:
       #     path: coverage
+
+  e2e-test:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: source-{{ .Branch }}-{{ .Revision }}
+      - restore_cache:
+          key: depens-{{ checksum "package.json" }}
+      - run: yarn cy:test
 
 workflows:
   version: 2
@@ -71,6 +80,9 @@ workflows:
       - build:
           requires:
             - install_dependencies
-      - test:
+      - unit-test:
+          requires:
+            - install_dependencies
+      - e2e-test:
           requires:
             - install_dependencies
