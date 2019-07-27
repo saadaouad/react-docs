@@ -60,15 +60,6 @@ jobs:
       # - store_artifacts:
       #     path: coverage
 
-  e2e-test:
-    <<: *defaults
-    steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
-      - run: yarn cy:test
-
 workflows:
   version: 2
   build_and_test:
