@@ -1,10 +1,7 @@
 # Javascript Node CircleCI 2.0 configuration file
 defaults: &defaults
   docker:
-    - image: cypress/base:8
-     environment:
-          ## this enables colors in the output
-          TERM: xterm
+    - image: circleci/node:10
   working_directory: ~/repo
 
 version: 2
@@ -60,8 +57,6 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn test:coverage
-      # - store_artifacts:
-      #     path: coverage
 
 workflows:
   version: 2
