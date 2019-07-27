@@ -55,7 +55,7 @@ jobs:
             - build
             - package.json
   
-  unit-tests:
+  unit_tests:
     docker:
       - image: circleci/node:10
     working_directory: ~/repo
@@ -66,7 +66,7 @@ jobs:
           key: depens-{{ checksum "package.json" }}
       - run: yarn test
 
-  e2e-tests:
+  e2e_tests:
     docker:
       - image: cypress/base:8
     working_directory: ~/repo
@@ -97,6 +97,7 @@ workflows:
       - build:
           requires:
             - install_dependencies
-      - test:
+      - unit_tests:
           requires:
             - install_dependencies
+      - e2e_tests
