@@ -5,12 +5,11 @@ defaults: &defaults
   working_directory: ~/repo
 
 version: 2
-orbs:
-  cypress: cypress-io/cypress@1
-  
 jobs:
   checkout_code:
-    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
     steps:
       - restore_cache:
           keys:
@@ -24,7 +23,9 @@ jobs:
             - "~/repo"
 
   install_dependencies:
-    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
     steps:
       - restore_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
@@ -39,7 +40,9 @@ jobs:
           key: depens-{{ checksum "package.json" }}
   
   build:
-    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
     steps:
       - restore_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
@@ -53,7 +56,9 @@ jobs:
             - package.json
   
   test:
-    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
     steps:
       - restore_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
