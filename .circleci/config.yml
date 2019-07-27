@@ -5,6 +5,8 @@ defaults: &defaults
   working_directory: ~/repo
 
 version: 2
+orbs:
+  cypress: cypress-io/cypress@1
 jobs:
   checkout_code:
     docker:
@@ -65,8 +67,6 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn test
-orbs:
-  cypress: cypress-io/cypress@1
 
 workflows:
   version: 2
@@ -82,4 +82,3 @@ workflows:
       - unit_tests:
           requires:
             - install_dependencies
-      - cypress/run 
