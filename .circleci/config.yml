@@ -5,6 +5,9 @@ defaults: &defaults
   working_directory: ~/repo
 
 version: 2
+orbs:
+  cypress: cypress-io/cypress@1
+  
 jobs:
   checkout_code:
     <<: *defaults
