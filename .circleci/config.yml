@@ -11,12 +11,12 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - v1-repo-{{ .Branch }}-{{ .Revision }}
-            - v1-repo-{{ .Branch }}-
-            - v1-repo-
+            - source-{{ .Branch }}-{{ .Revision }}
+            - source-{{ .Branch }}-
+            - source-
       - checkout
       - save_cache:
-          key: v1-repo-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
           paths:
             - "~/repo"
 
@@ -24,7 +24,7 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           keys:
             - depens-{{ checksum "package.json" }}
@@ -39,7 +39,7 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn build
@@ -53,7 +53,7 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Branch }}-{{ .Revision }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn test
