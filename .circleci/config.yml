@@ -64,14 +64,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-node-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-node-{{ .Branch }}
-            - v1-node
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
       - save_cache:
-          key: v1-depens-{{ .Branch }}-{{ checksum "package.json" }}
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache
       - run: $(yarn bin)/cypress run --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
