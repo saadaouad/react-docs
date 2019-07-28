@@ -65,6 +65,26 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn test
+    
+  e2e_tests:
+    docker:
+      - image: cypress/base:8
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache
+      - run: $(yarn bin)/cypress run --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
 
 workflows:
   version: 2
@@ -80,3 +100,4 @@ workflows:
       - unit_tests:
           requires:
             - install_dependencies
+      - e2e_tests
