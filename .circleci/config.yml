@@ -90,6 +90,4 @@ workflows:
       - unit_tests:
           requires:
             - install_dependencies
-      - e2e_tests:
-          requires:
-            - install_dependencies
+      - e2e_tests
