@@ -80,10 +80,3 @@ workflows:
       - unit_tests:
           requires:
             - install_dependencies
-
-orbs:
-  cypress: cypress-io/cypress@1
-workflows:
-  build:
-    jobs:
-      - cypress/run
