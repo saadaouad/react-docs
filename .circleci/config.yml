@@ -7,9 +7,7 @@ defaults: &defaults
 version: 2
 jobs:
   checkout_code:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/repo
+    <<: *defaults
     steps:
       - restore_cache:
           keys:
@@ -23,9 +21,7 @@ jobs:
             - "~/repo"
 
   install_dependencies:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/repo
+    <<: *defaults
     steps:
       - restore_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
@@ -40,9 +36,7 @@ jobs:
           key: depens-{{ checksum "package.json" }}
   
   build:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/repo
+    <<: *defaults
     steps:
       - restore_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
@@ -56,9 +50,7 @@ jobs:
             - package.json
   
   unit_tests:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/repo
+    <<: *defaults
     steps:
       - restore_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
@@ -67,23 +59,15 @@ jobs:
       - run: yarn test
     
   e2e_tests:
-    docker:
-      - image: cypress/base:10
-    working_directory: ~/repo
+    <<: *defaults
     steps:
-      - checkout
       - restore_cache:
           keys:
-            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-            - v1-deps-{{ .Branch }}
-            - v1-deps
-      - run:
-          name: Install Dependencies
-          command: yarn install --frozen-lockfile
+            - v1-node-{{ .Branch }}-{{ .Revision }}
+            - v1-node-{{ .Branch }}
+            - v1-node
       - save_cache:
-          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          paths:
-            - ~/.cache
+          key: v1-node-{{ .Branch }}-{{ .Revision }}
       - run: $(yarn bin)/cypress run --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
 
 workflows:
@@ -100,4 +84,6 @@ workflows:
       - unit_tests:
           requires:
             - install_dependencies
-      - e2e_tests
+      - e2e_tests:
+          requires:
+            - install_dependencies
