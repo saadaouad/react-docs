@@ -69,7 +69,7 @@ jobs:
       - save_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ~/.cache
+            - "~/repo"
       - run: $(yarn bin)/cypress run --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
 
 workflows:
