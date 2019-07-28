@@ -62,14 +62,9 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          keys:
-            - v1-node-{{ .Branch }}-{{ .Revision }}
-            - v1-node-{{ .Branch }}
-            - v1-node
-      - save_cache:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - "~/repo"
+      - restore_cache:
+          key: depens-{{ checksum "package.json" }}
       - run: $(yarn bin)/cypress run --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
 
 workflows:
