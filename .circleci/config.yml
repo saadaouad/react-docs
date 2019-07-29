@@ -76,7 +76,7 @@ jobs:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache
-      - run: $(yarn bin)/cypress run --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
+      - run:  yarn e2e-test --record --key 5aa4cb38-1b2c-4335-9cb1-7d547572ee4a
 
 workflows:
   version: 2
