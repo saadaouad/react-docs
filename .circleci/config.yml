@@ -11,12 +11,12 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - source-{{ .Branch }}-{{ .Revision }}
-            - source-{{ .Branch }}-
-            - source-
+            - v1-node-{{ .Branch }}-{{ .Revision }}
+            - v1-node-{{ .Branch }}-
+            - v1-node-
       - checkout
       - save_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+          key: v1-node-{{ .Branch }}-{{ .Revision }}
           paths:
             - "~/repo"
 
@@ -24,7 +24,7 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+          key: v1-node-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           keys:
             - depens-{{ checksum "package.json" }}
@@ -39,7 +39,7 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+          key: v1-node-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn build
@@ -49,16 +49,34 @@ jobs:
             - build
             - package.json
   
-  test:
+  unit_tests:
     <<: *defaults
     steps:
       - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+          key: v1-node-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
-      - run: yarn test:coverage
-      # - store_artifacts:
-      #     path: coverage
+      - run: yarn test
+    
+  e2e_tests:
+    docker:
+      - image: cypress/base:8
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-deps-{{ .Branch }}
+            - v1-deps
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache
+      - run:  yarn e2e-test
 
 workflows:
   version: 2
@@ -71,6 +89,9 @@ workflows:
       - build:
           requires:
             - install_dependencies
-      - test:
+      - unit_tests:
           requires:
-            - install_dependencies
+            - build
+      - e2e_tests:
+          requires:
+            - build

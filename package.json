@@ -29,13 +29,18 @@
     "coverage": "react-scripts test --coverage",
     "test:coverage": "npm test -- --coverage",
     "test:badges": "npm run test:coverage  && jest-coverage-badges",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "e2e-test": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer build/static/js/main.*"
   },
   "devDependencies": {
+    "cypress": "^3.4.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.8.6",
+    "start-server-and-test": "^1.9.1"
   },
   "browserslist": [
     ">0.2%",
