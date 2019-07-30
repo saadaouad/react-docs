@@ -1,5 +1,5 @@
-describe("Visit home page", function() {
-  it("Visit home page", function() {
-    cy.visit("http://localhost:3000");
+describe("The home page", function() {
+  it("Successfully loads", function() {
+    cy.visit('/');
   });
 });
