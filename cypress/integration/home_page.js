@@ -1,8 +1,6 @@
 describe("The home page", function() {
-  it("Successfully loads", function() {
+  it("The home page", function() {
     cy.visit("/");
-  });
-  it("Home redirection", function() {
     cy.get("[data-cy=header-title]").click();
   });
 });
