@@ -1,4 +1,4 @@
-describe("Menu links", function() {
+describe("Menu", function() {
   it("visit home page", function() {
     cy.visit("/");
   });
