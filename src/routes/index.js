@@ -7,7 +7,7 @@ import HandlingEvents from "../components/handling-events";
 import IntroducingToJsx from "../components/introducing-jsx";
 import ListsAndKeys from "../components/lists-and-keys";
 import StateAndLifeCycle from "../components/state-and-lifecycle";
-import ComponentsAndProps from "../components/components-and-props/UserInfo";
+import ComponentsAndProps from "../components/components-and-props";
 import Forms from "../components/forms";
 import Calculator from "../components/lifting-state-up";
 import CompositionVsInheritance from "../components/composition-vs-inheritance";

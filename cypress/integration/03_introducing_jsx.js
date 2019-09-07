@@ -1,11 +1,11 @@
 describe("Introducing JSX", function() {
-  it("visit home page", function() {
+  it("visit introducing JSX page", function() {
     cy.visit("/introducing-jsx");
   });
 
-  it("check introducing jsx content", function() {
-    cy.get("[data-cy=introducing-jsx-title]").contains("Introducing JSX");
-    cy.get("[data-cy=introducing-jsx-content]").contains(
+  it("check introducing JSX content", function() {
+    cy.get("[data-cy=title]").contains("Introducing JSX");
+    cy.get("[data-cy=content]").contains(
       "Hello, Mohammed Abu muslim!"
     );
   });
