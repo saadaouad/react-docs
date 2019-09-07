@@ -13,9 +13,9 @@ class IntroducingJSX extends Component {
   render() {
     return (
       <div className="tc">
-        <h2>Introducing JSX</h2>
+        <h2 data-cy="title">Introducing JSX</h2>
         <div className="pv3">
-          <p>Hello, {formatName(user)}!</p>
+          <p data-cy="content">Hello, {formatName(user)}!</p>
         </div>
       </div>
     );

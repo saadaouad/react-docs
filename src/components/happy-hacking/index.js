@@ -5,7 +5,7 @@ class HappyHacking extends Component {
   render() {
     return (
       <div className="tc">
-        <p className="App-intro">
+        <p data-cy="footer" className="App-intro">
           <code>Happy hacking!</code>
         </p>
       </div>
