@@ -3,7 +3,7 @@ import { Formik } from "formik";
 
 const Forms = () => (
   <div className="tc">
-    <h2>Forms</h2>
+    <h2 data-cy="forms">Forms</h2>
     <div className="tl pv3">
       <Formik
         initialValues={{ email: "", password: "" }}
@@ -37,9 +37,10 @@ const Forms = () => (
           handleSubmit,
           isSubmitting
         }) => (
-          <form onSubmit={handleSubmit}>
+          <form data-cy="form" onSubmit={handleSubmit}>
             <div className="pa2">
               <input
+                data-cy="email"
                 type="email"
                 name="email"
                 onChange={handleChange}
@@ -52,6 +53,7 @@ const Forms = () => (
             </div>
             <div className="pa2">
               <input
+                data-cy="password"
                 type="password"
                 name="password"
                 onChange={handleChange}
