@@ -17,9 +17,9 @@ class HandlingEvents extends React.Component {
   render() {
     return (
       <div className="tc">
-        <h2>Handling events</h2>
+        <h2 data-cy="title">Handling events</h2>
         <div className="pv3">
-          <button onClick={this.handleClick}>
+          <button data-cy="button" onClick={this.handleClick}>
             {this.state.isToggleOn ? "Click here" : "Thanks!"}
           </button>
         </div>
