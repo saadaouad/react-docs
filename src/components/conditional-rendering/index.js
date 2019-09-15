@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 function UserGreeting(props) {
-  return <p>Welcome back!</p>;
+  return <p data-cy="sub-title">Welcome back!</p>;
 }
 
 function GuestGreeting(props) {
-  return <p>Please sign up.</p>;
+  return <p data-cy="sub-title">Please sign up.</p>;
 }
 
 function Greeting(props) {
@@ -17,11 +17,11 @@ function Greeting(props) {
 }
 
 function LoginButton(props) {
-  return <button onClick={props.onClick}>Login</button>;
+  return <button data-cy="button" onClick={props.onClick}>Login</button>;
 }
 
 function LogoutButton(props) {
-  return <button onClick={props.onClick}>Logout</button>;
+  return <button data-cy="button" onClick={props.onClick}>Logout</button>;
 }
 
 class LoginControl extends Component {
@@ -50,7 +50,7 @@ class LoginControl extends Component {
 
     return (
       <div className="tc">
-        <h2>Conditional rendering</h2>
+        <h2 data-cy="title">Conditional rendering</h2>
         <Greeting isLoggedIn={isLoggedIn} />
         {button}
       </div>
