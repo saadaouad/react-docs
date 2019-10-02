@@ -41,7 +41,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "react-test-renderer": "^16.10.1",
-    "start-server-and-test": "^1.10.2"
+    "start-server-and-test": "^1.10.3"
   },
   "browserslist": [
     ">0.2%",
