@@ -4,28 +4,13 @@ const LazyComponent = React.lazy(() => import("./LazyComponent"));
 const AnotherLazyComponent = React.lazy(() => import("./AnotherLazyComponent"));
 
 class CodeSplitting extends Component {
-  handleClick = () => {
-    import("./moduleA")
-      .then(({ moduleA }) => {
-        // Use moduleA
-      })
-      .catch(err => {
-        // Handle failure
-      });
-  };
-
   render() {
     return (
       <div className="tc">
-        <h2>Code Splitting</h2>
-        <div>
-          <button type="button" onClick={this.handleClick}>
-            Load
-          </button>
-        </div>
+        <h2 data-cy="title">Code Splitting</h2>
         <Suspense fallback={<div>Loading...</div>}>
-          <LazyComponent />
-          <AnotherLazyComponent />
+          <LazyComponent dataCy="lazy-component" />
+          <AnotherLazyComponent dataCy="another-lazy-component" />
         </Suspense>
       </div>
     );
