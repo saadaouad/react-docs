@@ -13,12 +13,12 @@
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
-    "react-app-polyfill": "^1.0.2",
+    "react-app-polyfill": "^1.0.3",
     "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.1.1",
-    "sinon": "^7.4.2",
-    "source-map-explorer": "^2.0.1"
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.1.2",
+    "sinon": "^7.5.0",
+    "source-map-explorer": "^2.1.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -40,8 +40,8 @@
     "cypress": "^3.4.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "react-test-renderer": "^16.9.0",
-    "start-server-and-test": "^1.10.0"
+    "react-test-renderer": "^16.10.2",
+    "start-server-and-test": "^1.10.2"
   },
   "browserslist": [
     ">0.2%",
