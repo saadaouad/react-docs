@@ -9,7 +9,7 @@
     "formik": "^2.0.3",
     "jest-coverage-badges": "^1.1.2",
     "lodash": "^4.17.15",
-    "node-sass-chokidar": "^1.3.5",
+    "node-sass-chokidar": "^1.4.0",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
