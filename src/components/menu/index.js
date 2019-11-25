@@ -129,6 +129,17 @@ class Menu extends React.Component {
             Code Splitting
           </Link>
         </div>
+        <div className="pv2">
+          <Link
+            id="context"
+            data-cy="context"
+            className="dim black no-underline"
+            to="/context"
+            getProps={isActive}
+          >
+            Context
+          </Link>
+        </div>
       </div>
     );
   }
