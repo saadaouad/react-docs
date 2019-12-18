@@ -34,18 +34,16 @@ function Chat() {
 class CompositionVsInheritance extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSignUp = this.handleSignUp.bind(this);
     this.state = { login: "" };
   }
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({ login: e.target.value });
-  }
+  };
 
-  handleSignUp() {
+  handleSignUp = () => {
     alert(`Welcome aboard, ${this.state.login}!`);
-  }
+  };
 
   render() {
     return (
