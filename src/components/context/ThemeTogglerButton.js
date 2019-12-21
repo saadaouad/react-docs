@@ -9,6 +9,7 @@ function ThemeTogglerButton() {
         <button
           onClick={toggleTheme}
           style={{ backgroundColor: theme.background }}
+          data-cy="context-button"
         >
           <MessageContext.Consumer>
             {({ message }) => message}
