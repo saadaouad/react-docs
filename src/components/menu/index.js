@@ -140,8 +140,9 @@ class Menu extends React.Component {
             Context
           </Link>
         </div>
-  );
-  };
-};
+      </div>
+    );
+  }
+}
 
 export default Menu;
