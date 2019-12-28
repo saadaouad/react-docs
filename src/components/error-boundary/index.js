@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 class ErrorBoundary extends React.Component {
@@ -24,7 +24,7 @@ class ErrorBoundary extends React.Component {
       return <p className="pa2">Something went wrong</p>;
     }
 
-    return this.props.children;
+    return <Fragment>{this.props.children}</Fragment>;
   }
 }
 
