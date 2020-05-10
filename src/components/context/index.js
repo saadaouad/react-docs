@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { ThemeContext, themes } from "./ThemeContext";
+
 import { MessageContext, messages } from "./MessageContext";
+import { ThemeContext, themes } from "./ThemeContext";
 import ThemeTogglerButton from "./ThemeTogglerButton";
 
 class Context extends Component {
@@ -15,7 +16,7 @@ class Context extends Component {
       }));
     };
 
-    this.state = {  
+    this.state = {
       theme: themes.light,
       message: messages.toggle,
       toggleTheme: this.toggleTheme
@@ -24,7 +25,7 @@ class Context extends Component {
 
   render() {
     return (
-      <div className="tc">
+      <div className="pa4">
         <h2 data-cy="title">Context</h2>
         <ThemeContext.Provider value={this.state}>
           <MessageContext.Provider value={this.state}>

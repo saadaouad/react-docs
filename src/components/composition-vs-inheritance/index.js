@@ -47,13 +47,13 @@ class CompositionVsInheritance extends Component {
 
   render() {
     return (
-      <div className="tc">
+      <div className="pa4">
         <h2>Composition vs Inheritance</h2>
         <Dialog
           title="Mars Exploration Program"
           message="How should we refer to you?"
         >
-          <div className="flex justify-center">
+          <div className="flex">
             <input value={this.state.login} onChange={this.handleChange} />
             <div className="ph2">
               <button onClick={this.handleSignUp}>Sign Me Up!</button>

@@ -11,11 +11,9 @@ const user = {
 
 const IntroducingJSX = props => {
   return (
-    <div className="tc">
+    <div className="pa4">
       <h2 data-cy="title">Introducing JSX</h2>
-      <div className="pv3">
-        <p data-cy="content">Hello, {formatName(user)}!</p>
-      </div>
+      <p data-cy="content">Hello, {formatName(user)}!</p>
     </div>
   );
 };

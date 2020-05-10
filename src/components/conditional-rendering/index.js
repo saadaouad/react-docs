@@ -17,11 +17,19 @@ function Greeting(props) {
 }
 
 function LoginButton(props) {
-  return <button data-cy="button" onClick={props.onClick}>Login</button>;
+  return (
+    <button data-cy="button" onClick={props.onClick}>
+      Login
+    </button>
+  );
 }
 
 function LogoutButton(props) {
-  return <button data-cy="button" onClick={props.onClick}>Logout</button>;
+  return (
+    <button data-cy="button" onClick={props.onClick}>
+      Logout
+    </button>
+  );
 }
 
 class LoginControl extends Component {
@@ -47,7 +55,7 @@ class LoginControl extends Component {
     );
 
     return (
-      <div className="tc">
+      <div className="pa4">
         <h2 data-cy="title">Conditional rendering</h2>
         <Greeting isLoggedIn={isLoggedIn} />
         {button}

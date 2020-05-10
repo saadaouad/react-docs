@@ -8,9 +8,9 @@ const ListItems = () => {
     </li>
   ));
   return (
-    <div className="tc">
+    <div className="pa4">
       <h2 data-cy="title">Lists and keys</h2>
-      <div className="tl pa3">{listItems}</div>
+      <div>{listItems}</div>
     </div>
   );
 };

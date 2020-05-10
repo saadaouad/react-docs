@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "@reach/router";
+import React from "react";
 
 class Menu extends React.Component {
   render() {
@@ -138,6 +138,17 @@ class Menu extends React.Component {
             getProps={isActive}
           >
             Context
+          </Link>
+        </div>
+        <div className="pv2">
+          <Link
+            id="hooks"
+            data-cy="hooks"
+            className="dim black no-underline"
+            to="/hooks"
+            getProps={isActive}
+          >
+            Hooks
           </Link>
         </div>
       </div>

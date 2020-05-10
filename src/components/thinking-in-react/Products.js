@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 const Products = ({ products }) => {
   const sportProducts =
@@ -8,17 +8,17 @@ const Products = ({ products }) => {
   const electronicProducts =
     products && products.filter(product => product.category === "Electronics");
   return (
-    <table className="center tl">
+    <table>
       <thead>
         <tr>
-          <th className="fw6 pv2 ph1">Name</th>
-          <th className="fw6 pv2 ph1">Price</th>
-          <th className="fw6 pv2 ph1">Stocked</th>
+          <th className="fw6 pv2 tl">Name</th>
+          <th className="fw6 pv2 tl">Price</th>
+          <th className="fw6 pv2 tl">Stocked</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th className="black fw5 pv1">{sportProducts[0].category}</th>
+          <th className="black-80 pv1">{sportProducts[0].category}</th>
         </tr>
         {sportProducts.map((product, index) => (
           <tr key={index} className="sport-products">
@@ -28,7 +28,7 @@ const Products = ({ products }) => {
           </tr>
         ))}
         <tr>
-          <th className="black fw5 pv1">{electronicProducts[0].category}</th>
+          <th className="black-80 pv1">{electronicProducts[0].category}</th>
         </tr>
         {electronicProducts.map((product, index) => (
           <tr key={index} className="electronic-products">
