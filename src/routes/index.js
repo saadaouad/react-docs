@@ -1,6 +1,5 @@
 import { Router } from "@reach/router";
 import React from "react";
-
 import CodeSplitting from "../components/code-splitting";
 import ComponentsAndProps from "../components/components-and-props";
 import CompositionVsInheritance from "../components/composition-vs-inheritance";
