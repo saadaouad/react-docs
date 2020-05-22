@@ -1,5 +1,6 @@
 import { Router } from "@reach/router";
 import React from "react";
+
 import CodeSplitting from "../components/code-splitting";
 import ComponentsAndProps from "../components/components-and-props";
 import CompositionVsInheritance from "../components/composition-vs-inheritance";
@@ -9,6 +10,7 @@ import Forms from "../components/forms";
 import HandlingEvents from "../components/handling-events";
 import Home from "../components/home";
 import Hooks from "../components/hooks";
+import EffectHook from '../components/hooks/EffectHook';
 import StateHook from "../components/hooks/StateHook";
 import IntroducingToJsx from "../components/introducing-jsx";
 import Calculator from "../components/lifting-state-up";
@@ -39,6 +41,7 @@ const App = () => {
           <Context path="/context" />
           <Hooks path="/hooks" />
           <StateHook path="/hooks/state-hook" />
+          <EffectHook path="/hooks/effect-hook" />
         </Home>
       </Router>
     </div>

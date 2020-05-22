@@ -25,6 +25,17 @@ function Hooks() {
           State Hook
         </Link>
       </div>
+      <div className="tl pv1">
+        <Link
+          id="effect-hook"
+          data-cy="effect-hook"
+          className="dim blue no-underline"
+          to="/hooks/effect-hook"
+          getProps={isActive}
+        >
+          Effect Hook
+        </Link>
+      </div>
     </div>
   );
 }
