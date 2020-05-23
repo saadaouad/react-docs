@@ -7,7 +7,7 @@ function Hooks() {
   };
   return (
     <div className="pa4">
-      <h2 data-cy="hooks" className="tl">
+      <h2 data-cy="title" className="tl">
         Hooks
       </h2>
       <p className="tl">
