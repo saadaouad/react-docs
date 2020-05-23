@@ -1,25 +1,12 @@
 import React from "react";
 
-const ComponentsAndProps = (
-  {
-    name,
-    avatarUrl,
-  },
-) => {
+const ComponentsAndProps = ({ name }) => {
   return (
-    <div className="tc">
+    <div className="pa4">
       <h2 data-cy="title">Components and Props</h2>
-      <div className="pv3">
-        <h4 data-cy="username" className="fw5">
-          This is, {name}!
-        </h4>
-        <img
-          data-cy="avatar"
-          className="Avatar"
-          src={avatarUrl}
-          alt={name}
-        />
-      </div>
+      <p data-cy="username" className="fw5">
+        This is, {name}!
+      </p>
     </div>
   );
 };

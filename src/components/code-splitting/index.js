@@ -5,7 +5,7 @@ const AnotherLazyComponent = React.lazy(() => import("./AnotherLazyComponent"));
 
 const CodeSplitting = props => {
   return (
-    <div className="tc">
+    <div className="pa4">
       <h2 data-cy="title">Code Splitting</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <LazyComponent dataCy="lazy-component" />

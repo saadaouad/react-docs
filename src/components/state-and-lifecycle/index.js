@@ -30,9 +30,9 @@ class Clock extends React.Component {
 
   render() {
     return (
-      <div className="tc">
+      <div className="pa4">
         <h2 data-cy="title">State and Lifecycle</h2>
-        <div data-cy="date-state" className="pv3">
+        <div data-cy="date-state">
           <FormattedDate date={this.state.date} />
         </div>
       </div>

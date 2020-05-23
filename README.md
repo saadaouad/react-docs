@@ -6,5 +6,5 @@
 ![Badge lines](https://github.com/saadaouad/react-docs/blob/master/coverage/badge-lines.svg)
 ![Badge statements](https://github.com/saadaouad/react-docs/blob/master/coverage/badge-statements.svg)
 
-### Runs app
+### Run app
 `yarn start` or `npm start`

@@ -1,4 +1,5 @@
 import React from "react";
+
 import TemperatureInput from "./TemperatureInput";
 
 function BoilingVerdict(props) {
@@ -48,9 +49,9 @@ class Calculator extends React.Component {
     const fahrenheit =
       scale === "c" ? tryConvert(temperature, toFahrenheit) : temperature;
     return (
-      <div className="tc">
+      <div className="pa4">
         <h2>Lifting State Up</h2>
-        <div className="tl pa3">
+        <div>
           <TemperatureInput
             scale="c"
             temperature={celsius}
