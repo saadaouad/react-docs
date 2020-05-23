@@ -15,8 +15,14 @@ function StateHook() {
         the value:
       </p>
       <div>
-        <p data-cy="count">You clicked {count} times</p>
-        <button data-cy="increment-count" onClick={() => incrementCount()}>
+        <p id="count" data-cy="count">
+          You clicked {count} times
+        </p>
+        <button
+          id="increment-count"
+          data-cy="increment-count"
+          onClick={() => incrementCount()}
+        >
           Click me
         </button>
       </div>
