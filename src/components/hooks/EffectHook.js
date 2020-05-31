@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function EffectHook() {
+const EffectHook = () => {
   const [count, setCount] = useState(0);
   function incrementCount() {
     setCount(count + 1);

@@ -1,6 +1,5 @@
 import { Router } from "@reach/router";
 import React from "react";
-
 import CodeSplitting from "../components/code-splitting";
 import ComponentsAndProps from "../components/components-and-props";
 import CompositionVsInheritance from "../components/composition-vs-inheritance";
@@ -10,6 +9,7 @@ import Forms from "../components/forms";
 import HandlingEvents from "../components/handling-events";
 import Home from "../components/home";
 import Hooks from "../components/hooks";
+import CustomHook from '../components/hooks/CustomHook';
 import EffectHook from '../components/hooks/EffectHook';
 import StateHook from "../components/hooks/StateHook";
 import IntroducingToJsx from "../components/introducing-jsx";
@@ -18,6 +18,7 @@ import ListsAndKeys from "../components/lists-and-keys";
 import MainComponent from "../components/main-component";
 import StateAndLifeCycle from "../components/state-and-lifecycle";
 import ThinkingInReact from "../components/thinking-in-react";
+
 
 let name = "Saad Aouad";
 
@@ -42,6 +43,7 @@ const App = () => {
           <Hooks path="/hooks" />
           <StateHook path="/hooks/state-hook" />
           <EffectHook path="/hooks/effect-hook" />
+          <CustomHook path="/hooks/custom-hook" />
         </Home>
       </Router>
     </div>
