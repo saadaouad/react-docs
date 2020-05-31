@@ -35,7 +35,7 @@ describe("Hooks", function() {
     cy.get('[data-cy="location"]').clear();
     cy.get('[data-cy="location"]').type("Berlin, DE");
     cy.get('[data-cy="use-dropdown-animal"]').select("bird");
-    cy.wait(400);
+    cy.wait(500);
     cy.get('[data-cy="use-dropdown-breed"]').select("Amazon");
   });
 });
