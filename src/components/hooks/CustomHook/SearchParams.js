@@ -6,7 +6,7 @@ const SearchParams = () => {
   const [location, setLocation] = useState("Casablanca, MA");
   const [breeds, setBreeds] = useState([]);
   const [animal, AnimalDropdown] = useDropDown("Animal", "dog", ANIMALS);
-  const [breed, BreedDropdown, setBreed] = useDropDown("Breed", "", breeds);
+  const [, BreedDropdown, setBreed] = useDropDown("Breed", "", breeds);
 
   useEffect(() => {
     setBreeds([]);
@@ -27,6 +27,7 @@ const SearchParams = () => {
             <input
               className="mh2"
               id="location"
+              data-cy="location"
               value={location}
               placeholder="Location"
               onChange={e => setLocation(e.target.value)}

@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import React from "react";
 import StateHook from "../StateHook.js";
 
-it("StateHook renders without crashing", () => {
+it("Test State Hook counter", () => {
   const wrapper = shallow(<StateHook />);
   wrapper.find("#count").prop(0);
   wrapper.find("#increment-count").simulate("click");

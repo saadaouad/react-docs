@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import React from "react";
 import EffectHook from "../EffectHook.js";
 
-it("EffectHook renders without crashing", () => {
+it("Test Effect Hook counter", () => {
   const wrapper = shallow(<EffectHook />);
   wrapper.find("#count").prop(0);
   wrapper.find("#increment-count").simulate("click");
