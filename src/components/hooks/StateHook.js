@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function StateHook() {
+const StateHook = () => {
   const [count, setCount] = useState(0);
   function incrementCount() {
     setCount(count + 1);

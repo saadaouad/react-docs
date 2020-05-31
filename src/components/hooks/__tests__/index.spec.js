@@ -7,4 +7,5 @@ it("Hooks renders without crashing", () => {
   const wrapper = shallow(<Hooks />);
   expect(wrapper.find("#state-hook").props().to).toBe("/hooks/state-hook");
   expect(wrapper.find("#effect-hook").props().to).toBe("/hooks/effect-hook");
+  expect(wrapper.find("#custom-hook").props().to).toBe("/hooks/custom-hook");
 });

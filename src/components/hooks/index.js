@@ -1,7 +1,7 @@
 import { Link } from "@reach/router";
 import React from "react";
 
-function Hooks() {
+const Hooks = () => {
   const isActive = ({ isCurrent }) => {
     return isCurrent ? { className: "b underline black" } : null;
   };
@@ -34,6 +34,17 @@ function Hooks() {
           getProps={isActive}
         >
           Effect Hook
+        </Link>
+      </div>
+      <div className="tl pv1">
+        <Link
+          id="custom-hook"
+          data-cy="custom-hook"
+          className="dim blue no-underline"
+          to="/hooks/custom-hook"
+          getProps={isActive}
+        >
+          Custom Hook
         </Link>
       </div>
     </div>
