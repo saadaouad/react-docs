@@ -151,6 +151,17 @@ class Menu extends React.Component {
             Hooks
           </Link>
         </div>
+        <div className="pv2">
+          <Link
+            id="portals"
+            data-cy="portals"
+            className="dim black no-underline"
+            to="/portals"
+            getProps={isActive}
+          >
+            Portals
+          </Link>
+        </div>
       </div>
     );
   }

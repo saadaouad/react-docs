@@ -1,6 +1,5 @@
 import { shallow } from "enzyme";
 import React from "react";
-
 import Menu from "../index.js";
 
 it("Menu component renders without crashing", () => {
@@ -30,4 +29,5 @@ it("Menu component renders without crashing", () => {
   expect(wrapper.find("#code-splitting").props().to).toBe("/code-splitting");
   expect(wrapper.find("#context").props().to).toBe("/context");
   expect(wrapper.find("#hooks").props().to).toBe("/hooks");
+  expect(wrapper.find("#portals").props().to).toBe("/portals");
 });
