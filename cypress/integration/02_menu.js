@@ -57,4 +57,19 @@ describe("Menu", function() {
     cy.get("[data-cy=code-splitting]").click();
     cy.url().should("include", "/code-splitting");
   });
+
+  it("check context link", function() {
+    cy.get("[data-cy=context]").click();
+    cy.url().should("include", "/context");
+  });
+
+  it("check hooks link", function() {
+    cy.get("[data-cy=hooks]").click();
+    cy.url().should("include", "/hooks");
+  });
+
+  it("check portals link", function() {
+    cy.get("[data-cy=portals]").click();
+    cy.url().should("include", "/portals");
+  });
 });
