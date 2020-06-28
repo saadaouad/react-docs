@@ -56,9 +56,11 @@ jobs:
           key: v1-node-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
-      - run: yarn test
-        environment:
-          NODE_OPTIONS: --max_old_space_size=8192
+      - run: 
+          name: Unit tests
+          command: yarn test
+          environment:
+            NODE_OPTIONS: --max_old_space_size=8192
     
   e2e_tests:
     docker:
