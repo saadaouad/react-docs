@@ -57,6 +57,8 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: yarn test
+        environment:
+          NODE_OPTIONS: --max_old_space_size=8192
     
   e2e_tests:
     docker:
