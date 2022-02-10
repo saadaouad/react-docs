@@ -10,7 +10,7 @@
     "formik": "^2.1.5",
     "jest-coverage-badges": "^1.1.2",
     "lodash": "^4.17.19",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "npm-run-all": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
